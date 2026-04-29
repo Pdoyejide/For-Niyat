@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For Niyat 💛</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel+Decorative:wght@400&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#c9a84c;--gold-light:#f0d070;--cream:#fdf6e3;--blush:#f7e8d4;--deep:#0d0508}
+html,body{min-height:100%;background:#0d0508;font-family:'Lato',sans-serif;color:#fdf6e3;overflow-x:hidden}
+
+/* STARS */
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.star{position:absolute;border-radius:50%;background:white;animation:twinkle var(--dur,3s) ease-in-out infinite alternate;opacity:0}
+@keyframes twinkle{from{opacity:0}to{opacity:var(--max-op,0.8)}}
+
+/* PETALS */
+.petal{position:fixed;top:-40px;animation:fall linear infinite;pointer-events:none;z-index:0}
+@keyframes fall{0%{transform:translateY(0) rotate(0deg);opacity:.8}100%{transform:translateY(110vh) rotate(540deg) translateX(30px);opacity:0}}
+
+/* PAGE */
+.page{position:relative;z-index:1;max-width:720px;margin:0 auto;padding:3rem 1.4rem 5rem}
+
+/* HERO */
+.hero-block{text-align:center;padding:4rem 1rem 3rem}
+.crown{font-size:3.5rem;display:block;animation:float 4s ease-in-out infinite;margin-bottom:.5rem}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-name{font-family:'Cinzel Decorative',cursive;font-size:clamp(2.2rem,10vw,5rem);color:#f0d070;letter-spacing:.06em;text-shadow:0 0 40px rgba(201,168,76,.6);line-height:1.1;margin-bottom:.4rem}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,3vw,1.35rem);color:#f7e8d4;opacity:.8}
+
+/* DIVIDER */
+.divider{text-align:center;color:#c9a84c;opacity:.3;letter-spacing:1rem;font-size:.8rem;margin:1.5rem 0}
+
+/* SECTION HEADER */
+.sec-label{font-family:'Cinzel Decorative',cursive;font-size:.65rem;letter-spacing:.2em;color:#c9a84c;opacity:.7;text-align:center;margin-bottom:.5rem;text-transform:uppercase}
+.sec-title{font-family:'Cinzel Decorative',cursive;font-size:clamp(1rem,3.5vw,1.8rem);color:#f0d070;text-align:center;margin-bottom:.5rem;text-shadow:0 0 20px rgba(201,168,76,.3)}
+.sec-sep{display:flex;align-items:center;justify-content:center;gap:.8rem;margin:0 auto 2rem;opacity:.35;color:#c9a84c;font-size:.7rem;letter-spacing:.4rem}
+.sec-sep::before,.sec-sep::after{content:'';flex:1;max-width:70px;height:1px;background:linear-gradient(90deg,transparent,#c9a84c)}
+
+/* LETTER */
+.letter-card{background:linear-gradient(160deg,rgba(255,255,255,.03),rgba(201,168,76,.05));border:1px solid rgba(201,168,76,.2);border-radius:20px;padding:2.5rem 2rem;position:relative;overflow:hidden;margin-bottom:1rem}
+.letter-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#c9a84c,transparent)}
+.letter-card::after{content:'"';position:absolute;top:.5rem;left:1.5rem;font-family:'Cormorant Garamond',serif;font-size:7rem;color:#c9a84c;opacity:.07;line-height:1;pointer-events:none}
+.letter-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.05rem,2.8vw,1.3rem);line-height:1.95;color:#fdf6e3;font-weight:300}
+.letter-text p{margin-bottom:1.3rem}
+.letter-text p:last-child{margin-bottom:0}
+.letter-text em{color:#f0d070;font-style:italic}
+.letter-sig{margin-top:2rem;text-align:right;font-family:'Cinzel Decorative',cursive;font-size:.82rem;color:#c9a84c;letter-spacing:.1em}
+
+/* SONGS */
+.song-card{background:linear-gradient(135deg,rgba(255,255,255,.03),rgba(201,168,76,.04));border:1px solid rgba(201,168,76,.17);border-radius:18px;padding:1.6rem;display:flex;align-items:center;gap:1.5rem;margin-bottom:1.2rem}
+.vinyl{width:72px;height:72px;min-width:72px;border-radius:50%;background:radial-gradient(circle at center,#1a0a00 18%,#2a1200 20%,#1a0808 35%,#2d1500 37%,#1a0808 55%,#2d1500 57%,#1a0808 70%,#3a1800 72%,#1a0808 85%,#c9a84c 87%,#1a0808 90%);display:flex;align-items:center;justify-content:center;box-shadow:0 0 15px rgba(0,0,0,.5);animation:spin 7s linear infinite}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.vinyl-dot{width:16px;height:16px;border-radius:50%;background:#c9a84c}
+.song-info{flex:1}
+.song-title{font-family:'Cinzel Decorative',cursive;font-size:clamp(.78rem,2.2vw,.95rem);color:#f0d070;margin-bottom:.25rem}
+.song-artist{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:#f7e8d4;opacity:.7;font-style:italic;margin-bottom:.6rem}
+.song-reason{font-family:'Cormorant Garamond',serif;font-size:clamp(.98rem,2.4vw,1.1rem);color:#fdf6e3;line-height:1.65;font-weight:300}
+.song-reason em{color:#f0d070;font-style:italic}
+.song-link{display:inline-block;margin-top:.7rem;font-family:'Lato',sans-serif;font-size:.7rem;letter-spacing:.1em;color:#c9a84c;border:1px solid rgba(201,168,76,.4);padding:.28rem .9rem;border-radius:50px;text-decoration:none}
+
+/* PUPPY */
+.puppy-wrap{display:flex;flex-direction:column;align-items:center;gap:1.2rem}
+.puppy-svg{width:240px;height:240px}
+@keyframes wagTail{0%,100%{transform:rotate(-15deg)}50%{transform:rotate(25deg)}}
+.puppy-tail{transform-origin:10px 10px;animation:wagTail .5s ease-in-out infinite}
+@keyframes earFlop{0%,100%{transform:rotate(0deg)}50%{transform:rotate(6deg)}}
+.puppy-ear-l{transform-origin:20px 5px;animation:earFlop 1.2s ease-in-out infinite}
+.puppy-ear-r{transform-origin:5px 5px;animation:earFlop 1.2s ease-in-out infinite reverse}
+@keyframes eyeBlink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(0.1)}}
+.puppy-eye{animation:eyeBlink 3.5s ease-in-out infinite;transform-origin:center}
+@keyframes pBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.puppy-body{animation:pBounce 1.5s ease-in-out infinite}
+.puppy-cap{font-family:'Cinzel Decorative',cursive;font-size:.82rem;letter-spacing:.12em;color:#c9a84c;text-align:center}
+.puppy-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:#f7e8d4;opacity:.85;text-align:center;max-width:340px;line-height:1.7}
+.puppy-note em{color:#f0d070}
+
+/* FINAL */
+.final{text-align:center;padding:3rem 1rem 2rem}
+.hb{font-size:3rem;display:block;margin-bottom:1rem;animation:heartbeat 1.4s ease-in-out infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}14%{transform:scale(1.18)}28%{transform:scale(1)}42%{transform:scale(1.12)}56%{transform:scale(1)}}
+.final p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,3vw,1.4rem);color:#fdf6e3;line-height:1.9}
+.final em{color:#f0d070}
+.final-sig{margin-top:1.8rem;font-family:'Cinzel Decorative',cursive;font-size:.75rem;letter-spacing:.15em;color:#c9a84c}
+
+/* FADE IN ANIMATIONS */
+.fade1{animation:fadeUp 1s ease both}
+.fade2{animation:fadeUp 1s ease .3s both}
+.fade3{animation:fadeUp 1s ease .6s both}
+.fade4{animation:fadeUp 1s ease .9s both}
+.fade5{animation:fadeUp 1s ease 1.2s both}
+.fade6{animation:fadeUp 1s ease 1.5s both}
+.fade7{animation:fadeUp 1s ease 1.8s both}
+.fade8{animation:fadeUp 1s ease 2.1s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<div id="stars"></div>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero-block fade1">
+    <span class="crown">💛</span>
+    <div class="hero-name">Niyat</div>
+    <div class="hero-sub">Prince left something here, just for you…</div>
+  </div>
+
+  <div class="divider fade2">✦ ✦ ✦</div>
+
+  <!-- LETTER -->
+  <div class="fade3">
+    <div class="sec-label">From the heart</div>
+    <div class="sec-title">Everything I Feel For You</div>
+    <div class="sec-sep">✦</div>
+    <div class="letter-card">
+      <div class="letter-text">
+        <p>Niyat,</p>
+        <p>There are moments — quiet ones, in the middle of ordinary days — when the thought of you just <em>lands</em> on me. Not loud or sudden, but gently. Like sunlight finding a window it has always known.</p>
+        <p>I miss you in a way that is hard to explain. It is not just your presence I miss — it is the <em>feeling</em> of you. The warmth you carry without even trying. The way the world feels a little softer when you are near.</p>
+        <p>I love you. Quietly, and completely. Not in a way that needs anything from you — but in a way that simply <em>is</em>. Like a river that has decided its direction and moves there without question.</p>
+        <p>I care about you more than I know how to say. About your dreams, about your long study nights, about every small thing you carry on those shoulders. I think about whether you have eaten, whether you rested, whether you know — <em>truly know</em> — how remarkable you are.</p>
+        <p>You are going to be an incredible doctor, Niyat. Not just because you are brilliant — though you are — but because you <em>care</em>. And that is the rarest thing in the world.</p>
+        <p>Until we are in the same space again, just know: you are thought of. You are prayed for. You are loved — <em>deeply, and by name</em>.</p>
+      </div>
+      <div class="letter-sig">— Prince 💛</div>
+    </div>
+  </div>
+
+  <div class="divider fade4" style="margin-top:2.5rem">〜 〜 〜</div>
+
+  <!-- SONGS -->
+  <div class="fade4">
+    <div class="sec-label">A playlist for you</div>
+    <div class="sec-title">Songs That Remind Me Of You</div>
+    <div class="sec-sep">♫</div>
+
+    <div class="song-card">
+      <div class="vinyl"><div class="vinyl-dot"></div></div>
+      <div class="song-info">
+        <div class="song-title">Risk It All</div>
+        <div class="song-artist">Bruno Mars</div>
+        <div class="song-reason">Every word feels written with you in mind. <em>I'd risk it all for you</em> — that is not just music. That is how it feels. Completely and without hesitation.</div>
+        <a class="song-link" href="https://open.spotify.com/search/Risk%20It%20All%20Bruno%20Mars" target="_blank">▶ Listen on Spotify</a>
+      </div>
+    </div>
+
+    <div class="song-card">
+      <div class="vinyl"><div class="vinyl-dot"></div></div>
+      <div class="song-info">
+        <div class="song-title">Just The Way You Are</div>
+        <div class="song-artist">Bruno Mars</div>
+        <div class="song-reason">Because when I think of you, I see someone who is <em>already perfect</em> — not in spite of anything, but because of everything you are. This plays in my head when I think of your smile.</div>
+        <a class="song-link" href="https://open.spotify.com/search/Just%20The%20Way%20You%20Are%20Bruno%20Mars" target="_blank">▶ Listen on Spotify</a>
+      </div>
+    </div>
+
+    <div class="song-card">
+      <div class="vinyl"><div class="vinyl-dot"></div></div>
+      <div class="song-info">
+        <div class="song-title">Die With A Smile</div>
+        <div class="song-artist">Lady Gaga & Bruno Mars</div>
+        <div class="song-reason">It is the sound of <em>choosing someone</em>, completely. Every time it plays, I think of you — and I smile without even meaning to.</div>
+        <a class="song-link" href="https://open.spotify.com/search/Die%20With%20A%20Smile" target="_blank">▶ Listen on Spotify</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider fade5" style="margin-top:2.5rem">〜 〜 〜</div>
+
+  <!-- PUPPY -->
+  <div class="fade5">
+    <div class="sec-label">A small friend for you</div>
+    <div class="sec-title">Say Hello to Schmidt 🐾</div>
+    <div class="sec-sep">✦</div>
+    <div class="puppy-wrap">
+      <svg class="puppy-svg" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="bg" cx="50%" cy="40%" r="55%"><stop offset="0%" stop-color="#c8956c"/><stop offset="100%" stop-color="#8b5e3c"/></radialGradient>
+          <radialGradient id="belly" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#f0d0b0"/><stop offset="100%" stop-color="#d4a87a"/></radialGradient>
+          <radialGradient id="nose" cx="40%" cy="35%" r="60%"><stop offset="0%" stop-color="#555"/><stop offset="100%" stop-color="#111"/></radialGradient>
+        </defs>
+        <g class="puppy-body">
+          <g class="puppy-tail" transform="translate(185,148)">
+            <ellipse cx="18" cy="0" rx="28" ry="10" fill="#8b5e3c" transform="rotate(-20)"/>
+            <ellipse cx="18" cy="0" rx="22" ry="7" fill="#c8956c" transform="rotate(-20)"/>
+          </g>
+          <ellipse cx="125" cy="168" rx="58" ry="46" fill="url(#bg)"/>
+          <ellipse cx="122" cy="175" rx="34" ry="28" fill="url(#belly)"/>
+          <rect x="78" y="155" width="94" height="52" rx="12" fill="#4a9e8e" opacity=".9"/>
+          <rect x="78" y="155" width="94" height="14" rx="8" fill="#3a8070" opacity=".9"/>
+          <rect x="93" y="172" width="22" height="16" rx="4" fill="#3a8070" opacity=".7"/>
+          <rect x="100" y="176" width="8" height="2" rx="1" fill="white" opacity=".85"/>
+          <rect x="103" y="173" width="2" height="8" rx="1" fill="white" opacity=".85"/>
+          <path d="M148,162 Q162,158 168,168 Q174,178 168,184 Q162,190 156,184" fill="none" stroke="#c0c0c0" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="155" cy="185" r="7" fill="none" stroke="#c0c0c0" stroke-width="3"/>
+          <circle cx="155" cy="185" r="4" fill="#b0b0b0"/>
+          <path d="M148,162 Q144,156 140,158" fill="none" stroke="#c0c0c0" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="139" cy="159" r="3.5" fill="#c0c0c0"/>
+          <circle cx="147" cy="161" r="3.5" fill="#c0c0c0"/>
+          <ellipse cx="97" cy="208" rx="14" ry="18" fill="#c8956c"/>
+          <ellipse cx="97" cy="218" rx="12" ry="8" fill="#8b5e3c"/>
+          <ellipse cx="150" cy="208" rx="14" ry="18" fill="#c8956c"/>
+          <ellipse cx="150" cy="218" rx="12" ry="8" fill="#8b5e3c"/>
+          <ellipse cx="91" cy="221" rx="3.5" ry="3" fill="#7a5030"/>
+          <ellipse cx="97" cy="223" rx="3.5" ry="3" fill="#7a5030"/>
+          <ellipse cx="103" cy="221" rx="3.5" ry="3" fill="#7a5030"/>
+          <ellipse cx="144" cy="221" rx="3.5" ry="3" fill="#7a5030"/>
+          <ellipse cx="150" cy="223" rx="3.5" ry="3" fill="#7a5030"/>
+          <ellipse cx="156" cy="221" rx="3.5" ry="3" fill="#7a5030"/>
+          <ellipse cx="125" cy="132" rx="24" ry="18" fill="url(#bg)"/>
+          <ellipse cx="125" cy="100" rx="46" ry="42" fill="url(#bg)"/>
+          <g class="puppy-ear-l"><ellipse cx="86" cy="78" rx="18" ry="28" fill="#8b5e3c" transform="rotate(-12,86,78)"/><ellipse cx="86" cy="79" rx="11" ry="21" fill="#b07848" transform="rotate(-12,86,79)"/></g>
+          <g class="puppy-ear-r"><ellipse cx="164" cy="78" rx="18" ry="28" fill="#8b5e3c" transform="rotate(12,164,78)"/><ellipse cx="164" cy="79" rx="11" ry="21" fill="#b07848" transform="rotate(12,164,79)"/></g>
+          <ellipse cx="125" cy="108" rx="30" ry="25" fill="#d4a87a" opacity=".4"/>
+          <g class="puppy-eye" transform="translate(110,95)"><circle r="9" fill="#2a1500"/><circle r="6.5" fill="#3d2000"/><circle cx="2" cy="-2" r="2.5" fill="white" opacity=".9"/></g>
+          <g class="puppy-eye" transform="translate(140,95)"><circle r="9" fill="#2a1500"/><circle r="6.5" fill="#3d2000"/><circle cx="2" cy="-2" r="2.5" fill="white" opacity=".9"/></g>
+          <ellipse cx="125" cy="114" rx="10" ry="7" fill="url(#nose)"/>
+          <ellipse cx="122" cy="112" rx="3" ry="2" fill="white" opacity=".3"/>
+          <path d="M115,122 Q125,130 135,122" fill="none" stroke="#7a5030" stroke-width="2.5" stroke-linecap="round"/>
+          <ellipse cx="125" cy="129" rx="8" ry="7" fill="#e05070"/>
+          <ellipse cx="125" cy="132" rx="8" ry="5" fill="#e05070"/>
+          <line x1="125" y1="124" x2="125" y2="135" stroke="#c04060" stroke-width="1.5"/>
+          <ellipse cx="100" cy="112" rx="10" ry="6" fill="#e88080" opacity=".35"/>
+          <ellipse cx="150" cy="112" rx="10" ry="6" fill="#e88080" opacity=".35"/>
+          <line x1="126" y1="163" x2="126" y2="185" stroke="#c0c0c0" stroke-width="1.5"/>
+          <circle cx="126" cy="163" r="3" fill="#c0c0c0"/>
+          <rect x="104" y="185" width="44" height="22" rx="5" fill="#c9a84c"/>
+          <rect x="106" y="187" width="40" height="18" rx="4" fill="#f0d070"/>
+          <text x="126" y="200" text-anchor="middle" font-family="Georgia,serif" font-size="8.5" fill="#7a5000" font-weight="bold">Schmidt</text>
+          <ellipse cx="125" cy="64" rx="38" ry="9" fill="#4a9e8e"/>
+          <rect x="100" y="40" width="50" height="26" rx="8" fill="#4a9e8e"/>
+          <rect x="100" y="40" width="50" height="8" rx="4" fill="#3a8070"/>
+          <rect x="118" y="48" width="14" height="3" rx="1.5" fill="white" opacity=".9"/>
+          <rect x="123" y="43" width="3" height="13" rx="1.5" fill="white" opacity=".9"/>
+        </g>
+      </svg>
+      <div class="puppy-cap">Schmidt the Med-Pup 🐾</div>
+      <div class="puppy-note">He has the scrubs, the stethoscope, and all the heart — just like his favourite person, <em>Dr. Niyat</em>. And his tail wags every time your name is mentioned. 🐶💛</div>
+    </div>
+  </div>
+
+  <div class="divider fade6" style="margin-top:2.5rem">〜 〜 〜</div>
+
+  <!-- FINAL -->
+  <div class="final fade7">
+    <span class="hb">💛</span>
+    <p>Niyat — you are <em>loved</em>.<br/>Not in a small, quiet way.<br/>In a way that fills a room. In a way that lasts.<br/><br/>Miss you every single day.</p>
+    <div class="final-sig">— Prince · Made with all the love in the world</div>
+  </div>
+
+</div>
+
+<script>
+// Stars
+const s=document.getElementById('stars');
+for(let i=0;i<130;i++){
+  const el=document.createElement('div');
+  el.className='star';
+  const sz=Math.random()*2.5+.5;
+  el.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--dur:${(Math.random()*4+2).toFixed(1)}s;--max-op:${(Math.random()*.6+.2).toFixed(2)};animation-delay:${(Math.random()*5).toFixed(1)}s`;
+  s.appendChild(el);
+}
+// Petals
+const pe=['🌸','🌺','🌷','❀'];
+for(let i=0;i<10;i++){
+  const p=document.createElement('div');
+  p.className='petal';
+  p.textContent=pe[Math.floor(Math.random()*pe.length)];
+  p.style.cssText=`left:${Math.random()*100}%;font-size:${(Math.random()*1.2+.8).toFixed(1)}rem;animation-duration:${(Math.random()*10+9).toFixed(1)}s;animation-delay:${(Math.random()*12).toFixed(1)}s`;
+  document.body.appendChild(p);
+}
+</script>
+</body>
+</html>
